@@ -1,11 +1,11 @@
 ﻿@page
-@model WebbLab3.Pages.Movies.IndexModel
+@model WebbLab3.Pages.Movies.MovieListModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "MovieList";
 }
 
-<h1>Movies</h1>
+<h1>MovieList</h1>
 
 
 <table class="table">
@@ -36,9 +36,7 @@
                 @Html.DisplayFor(modelItem => item.MovieStartTime)
             </td>
             <td>
-                <a asp-page="./PurchaseTicket" asp-route-id="@item.ID">Purchase Tickets</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |                
             </td>
         </tr>
 }
