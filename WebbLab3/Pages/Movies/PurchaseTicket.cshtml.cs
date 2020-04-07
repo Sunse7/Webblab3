@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -18,9 +19,10 @@ namespace WebbLab3.Pages.Movies
         {
             _context = context;
         }
-
         public Movie Movie { get; set; }
+        
         [BindProperty]
+        [Range(1, 12)]
         public int TicketAmount { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)

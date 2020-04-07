@@ -33,7 +33,15 @@
     <form method="post" asp-page-handler="PurchaseTicket" asp-route-id="@Model.Movie.ID">
         <div class="form-group col-md-4">
             <label asp-for="Movie.NumberOfSeats" class="control-label"></label>
-            <input asp-for="TicketAmount" class="form-control" />
+            <input asp-for="TicketAmount" class="form-control"/>
+            @if (Model.TicketAmount >= 12)
+            {
+                <p>Invalid number, max 12 tickets</p>
+            }
+            else if (Model.TicketAmount <= 0)
+            {
+                <p>Invalid number, min 1 ticket</p>
+            }
             <span asp-validation-for="Movie.NumberOfSeats" class="text-danger"></span>
         </div>
         <button>Purchase</button>

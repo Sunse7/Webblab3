@@ -18,33 +18,30 @@ namespace WebbLab3.Data
 
         public void SeedDatabase()
         {
-            var date = DateTime.Today;
-            var time = DateTime.Now;
-
             Movie.AddRange(
                 new Movie
                 {
                     Title = "The Awesome Movie",
                     NumberOfSeats = 50,
-                    MovieStartTime = date.Date + time.TimeOfDay
+                    MovieStartTime = new DateTime(2020, 04, 15, 17, 00, 00)
                 },
                 new Movie
                 {
                     Title = "Lucky the Movie",
                     NumberOfSeats = 50,
-                    MovieStartTime = date.Date + time.TimeOfDay
+                    MovieStartTime = new DateTime(2020, 04, 20, 19, 15, 00)
                 },
                 new Movie
                 {
                     Title = "Azmodan Gone Wild",
                     NumberOfSeats = 50,
-                    MovieStartTime = date.Date + time.TimeOfDay
+                    MovieStartTime = new DateTime(2020, 04, 22, 22, 30, 00)
                 },
                 new Movie
                 {
                     Title = "Big Boii Adventures",
                     NumberOfSeats = 50,
-                    MovieStartTime = date.Date + time.TimeOfDay
+                    MovieStartTime = new DateTime(2020, 04, 25, 15, 45, 00)
                 });
 
             SaveChanges();

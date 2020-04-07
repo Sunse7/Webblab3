@@ -18,9 +18,6 @@ namespace WebbLab3.Pages.Movies
         {
             _context = context;
         }
-
-        public bool SeedDatabaseSuccess { get; set; }
-        public bool SeedDatabaseFail { get; set; }
         public IActionResult OnGet()
         {
             return Page();
@@ -37,11 +34,6 @@ namespace WebbLab3.Pages.Movies
             if (!_context.Movie.Any())
             {
                 _context.SeedDatabase();
-                SeedDatabaseSuccess = true;
-            }
-            else
-            {
-                SeedDatabaseFail = true;
             }
 
             return RedirectToPage("./Index");
