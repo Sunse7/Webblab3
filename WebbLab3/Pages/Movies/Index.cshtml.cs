@@ -21,10 +21,20 @@ namespace WebbLab3.Pages.Movies
 
         public IList<Movie> Movie { get;set; }
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(string sortorder)
         {
-            //Lägg sortering här
-            Movie = await _context.Movie.ToListAsync();
+            if (sortorder == "SeatsLeft")
+            {
+                Movie = await _context.Movie.OrderByDescending(m => m.NumberOfSeats).ToListAsync();
+            }
+            else if (sortorder == "StartTime")
+            {
+                Movie = await _context.Movie.OrderByDescending(m => m.MovieStartTime).ToListAsync();
+            }
+            else
+            {
+                Movie = await _context.Movie.ToListAsync();
+            }
         }
     }
 }
