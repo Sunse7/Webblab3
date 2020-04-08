@@ -15,5 +15,7 @@ namespace WebbLab3.Models
         [DisplayFormat(DataFormatString = "{0:dd MMM HH:mm}", ApplyFormatInEditMode = true)]
         [Display(Name = "Start Time")]
         public DateTime MovieStartTime { get; set; }
+        [Range(1, 2)]
+        public int Salon { get; set; }
     }
 }

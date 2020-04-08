@@ -23,25 +23,29 @@ namespace WebbLab3.Data
                 {
                     Title = "The Awesome Movie",
                     NumberOfSeats = 50,
-                    MovieStartTime = new DateTime(2020, 04, 15, 17, 00, 00)
+                    MovieStartTime = new DateTime(2020, 04, 20, 17, 00, 00),
+                    Salon = 1
                 },
                 new Movie
                 {
                     Title = "Lucky the Movie",
-                    NumberOfSeats = 50,
-                    MovieStartTime = new DateTime(2020, 04, 20, 19, 15, 00)
+                    NumberOfSeats = 100,
+                    MovieStartTime = new DateTime(2020, 04, 20, 19, 15, 00),
+                    Salon = 2
                 },
                 new Movie
                 {
                     Title = "Azmodan Gone Wild",
-                    NumberOfSeats = 50,
-                    MovieStartTime = new DateTime(2020, 04, 22, 22, 30, 00)
+                    NumberOfSeats = 100,
+                    MovieStartTime = new DateTime(2020, 04, 20, 22, 30, 00),
+                    Salon = 2
                 },
                 new Movie
                 {
                     Title = "Big Boii Adventures",
                     NumberOfSeats = 50,
-                    MovieStartTime = new DateTime(2020, 04, 25, 15, 45, 00)
+                    MovieStartTime = new DateTime(2020, 04, 20, 15, 45, 00),
+                    Salon = 1
                 });
 
             SaveChanges();

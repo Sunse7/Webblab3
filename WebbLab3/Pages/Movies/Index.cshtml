@@ -30,6 +30,9 @@
                     @Html.DisplayNameFor(model => model.Movie[0].MovieStartTime)
                 </a>
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie[0].Salon)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -45,6 +48,9 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.MovieStartTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Salon)
                 </td>
                 <td>
                     <a asp-page="./PurchaseTicket" asp-route-id="@item.ID">Purchase Tickets</a> |
