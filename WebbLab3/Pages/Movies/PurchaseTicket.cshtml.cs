@@ -48,8 +48,6 @@ namespace WebbLab3.Pages.Movies
             {
                 return Page();
             }
-
-            //_context.Attach(Movie).State = EntityState.Modified;
             
             try
             {
@@ -57,14 +55,16 @@ namespace WebbLab3.Pages.Movies
                 {
                     return NotFound();
                 }
+                else if (Movie.NumberOfSeats - TicketAmount < 0)
+                {
+                    return RedirectToPage("./Index");                    
+                }
                 else
                 {
                     Movie.NumberOfSeats -= TicketAmount;
                 }
 
                 await _context.SaveChangesAsync();
-                //_context.Remove(Movie.NumberOfSeats);
-                //Logiken här för att ta bort seats i databasen
             }
             catch (DbUpdateConcurrencyException)
             {

@@ -4,6 +4,13 @@
 @{
     ViewData["Title"] = "Index";
 }
+<head>
+    <style>
+        .sold-out-movie {
+            color: #E5E4E7;
+        }
+    </style>
+</head>
 
 <h1>Movies</h1>
 
@@ -25,7 +32,7 @@
     </thead>
     <tbody>
 @foreach (var item in Model.Movie) {
-        <tr>
+        <tr class="@(@item.NumberOfSeats <= 0 ? "sold-out-movie": "")">
             <td>
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
@@ -37,7 +44,6 @@
             </td>
             <td>
                 <a asp-page="./PurchaseTicket" asp-route-id="@item.ID">Purchase Tickets</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
                 <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
             </td>
         </tr>

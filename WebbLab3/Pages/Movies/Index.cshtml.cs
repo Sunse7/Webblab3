@@ -23,6 +23,7 @@ namespace WebbLab3.Pages.Movies
 
         public async Task OnGetAsync()
         {
+            //Lägg sortering här
             Movie = await _context.Movie.ToListAsync();
         }
     }
